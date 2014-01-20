@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="MyMediaStuff.UI.Controls.NerdInfo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:Controls="clr-namespace:Catel.Windows.Controls;assembly=Catel.Windows">
+
+    <!-- Assume that we are shown inside a view model, that's what nerds want to see -->
+    <GroupBox Header="Nerd info">
+        <Controls:StackGrid>
+            <Controls:StackGrid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Controls:StackGrid.RowDefinitions>
+
+            <Controls:StackGrid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Controls:StackGrid.ColumnDefinitions>
+
+            <!-- View model title -->
+            <Label Content="View model title:" />
+            <Label Content="{Binding Title}" />
+
+            <!-- View model construction time -->
+            <Label Content="View model construction time:" />
+            <Label Content="{Binding ViewModelConstructionTime}" ContentStringFormat="At {0:HH:mm:ss.fff}" />
+
+            <!-- View model is initialized -->
+            <Label Content="Is initialized:" />
+            <Label Content="{Binding IsInitialized}" />
+
+            <!-- View model has errors -->
+            <Label Content="Has errors:" />
+            <Label Content="{Binding HasErrors}" />
+        </Controls:StackGrid>
+    </GroupBox>
+</UserControl>
